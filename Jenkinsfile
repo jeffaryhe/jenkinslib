@@ -36,8 +36,8 @@ pipeline {
                     script{ //填写运行代码
                         withCredentials([usernamePassword(credentialsId: 'dd0d48de-2092-4d5b-9c22-70fc0439ceed', passwordVariable: 'password', usernameVariable: 'username')]) {
                         // some block
-                        println(username)
-                        println(password)
+                        println($username)
+                        println($password)
                         }
                         println('获取代码')
                         message.PrintMes("获取代码",'green1')
