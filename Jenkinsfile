@@ -32,7 +32,7 @@ pipeline {
                 timeout(time:5, unit:"MINUTES"){   //步骤超时时间
                     script{ //填写运行代码
                         println('获取代码')
-                        message.PrintMes("获取代码",'red')
+                        message.PrintMes("获取代码",'blue')
                         println("${tomcat}")
                         input id: 'Test', message: '我们是否需要继续', ok: '是的，正在开始', parameters: [choice(choices: ['v1', 'v2'], description: '', name: 'test')], submitter: 'jeff,admin'
                     }
