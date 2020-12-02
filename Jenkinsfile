@@ -32,7 +32,7 @@ pipeline {
                 timeout(time:5, unit:"MINUTES"){   //步骤超时时间
                     script{ //填写运行代码
                         println('获取代码')
-                        message.PrintMes("获取代码",'blue')
+                        message.PrintMes("获取代码",'green1')
                         println("${tomcat}")
                         input id: 'Test', message: '我们是否需要继续', ok: '是的，正在开始', parameters: [choice(choices: ['v1', 'v2'], description: '', name: 'test')], submitter: 'jeff,admin'
                     }
@@ -50,7 +50,7 @@ pipeline {
                         timeout(time:20, unit:"MINUTES"){
                             script{
                                 println('应用打包')
-                                message.PrintMes("应用打包",'green')
+                                message.PrintMes("应用打包",'green1')
                                 println("${nginx}")
                                 println("${tomcat}")
                                 mvnHome = tool "mvn"
@@ -68,7 +68,7 @@ pipeline {
                         timeout(time:30, unit:"MINUTES"){
                             script{
                                 print("代码扫描")
-                                message.PrintMes("代码扫描",'green')
+                                message.PrintMes("代码扫描",'green1')
                             }
                         }
                     }
