@@ -50,6 +50,7 @@ pipeline {
                         timeout(time:20, unit:"MINUTES"){
                             script{
                                 println('应用打包')
+                                tools.PrintMes("应用打包",'green')
                                 println("${nginx}")
                                 println("${tomcat}")
                                 mvnHome = tool "mvn"
@@ -67,6 +68,7 @@ pipeline {
                         timeout(time:30, unit:"MINUTES"){
                             script{
                                 print("代码扫描")
+                                tools.PrintMes("代码扫描",'green')
                             }
                         }
                     }
