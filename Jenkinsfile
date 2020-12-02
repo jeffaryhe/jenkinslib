@@ -49,8 +49,9 @@ pipeline {
                     steps{
                         timeout(time:20, unit:"MINUTES"){
                             script{
-                                println('应用打包')
                                 message.PrintMes("应用打包",'green1')
+                                println('应用打包')
+                            
                                 println("${nginx}")
                                 println("${tomcat}")
                                 mvnHome = tool "mvn"
