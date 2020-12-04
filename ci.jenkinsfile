@@ -28,7 +28,7 @@ pipeline{
         steps{
           script{
               gradlehome = tool "gradle"
-              sh "${gradlehome}/bin/gradle ${mvnoptions}"
+              sh "/usr/local/gradle/bin/gradle -v"
           }
         }
 	  }
