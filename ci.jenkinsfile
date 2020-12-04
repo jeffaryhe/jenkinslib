@@ -20,8 +20,8 @@ pipeline{
           script{
               anthome = tool "ant"
               sh "${anthome} -v"
-                }
-            }
+          }
         }
-	}
+	  }
+    }
 }
