@@ -41,18 +41,9 @@ pipeline{
         steps{
           script{
               npmhome = tool "npm"
-	      sh "${npmlehome}/bin/npm ${mvnoptions}"
+              sh "${npmhome}/bin/npm ${mvnoptions}"
           }
         }
 	  }	  
 	}
 }
-
-
-
-
-
-
-
-
-
