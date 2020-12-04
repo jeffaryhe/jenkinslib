@@ -18,8 +18,12 @@ pipeline{
       stage("ant build"){
         steps{
           script{
-              anthome = tool "ant"
-              sh "${anthome}/bin/ant ${mvnoptions}" 
+		      try {
+	               anthome = tool "ant"
+                   sh "${anthome}/bin/ant ${mvnoptions}"   
+	          } catch(error){
+		          println{error}   
+	            }
           }
         }
 	  }
