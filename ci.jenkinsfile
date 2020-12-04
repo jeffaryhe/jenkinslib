@@ -1,10 +1,22 @@
 #!groovy
+@Libary('jenkinslibrary'@master) _   //指定版本号为master
+
+def build = new org.devops.build()
 
 String mvnoptions = "${env.mvnoptions}"
 
 pipeline{
     agent { node { label "build"} }
     
+    stages{
+	    stage("build"){
+	      script{
+                  build.build(buildType,buildShell)
+	      }
+	    }	    
+    }
+    
+	
     stages{
       stage("maven build"){
         steps{
