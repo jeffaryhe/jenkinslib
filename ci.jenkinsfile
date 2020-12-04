@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #!groovy
 
 String mvnoptions = "${env.mvnoptions}"
