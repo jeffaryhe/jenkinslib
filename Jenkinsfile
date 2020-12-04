@@ -59,7 +59,7 @@ pipeline {
                                 println("${tomcat}")
                                 mvnHome = tool "mvn"
                                 println("${mvnHome}")
-                                sh "${mvnHome} --version"
+                                sh "${mvnHome}/bin/mvn --version"
                                 
                             }
                         }
