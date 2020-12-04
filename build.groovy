@@ -1,4 +1,4 @@
-#!groovy
+package org.devops
 
 //构建类型
 def Build(buildType,buildShell){    
