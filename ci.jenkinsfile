@@ -1,9 +1,13 @@
 #!groovy
-@Libary('jenkinslibrary'@master) _   //指定版本号为master
+@Libary('jenkinslibrary@master') _   //指定版本号为master
 
 def build = new org.devops.build()
 
+//定义构建时的选项
 String mvnoptions = "${env.mvnoptions}"
+
+//定义构建时工具类型，
+String buildShell = "${env.buildType}"
 
 pipeline{
     agent { node { label "build"} }
