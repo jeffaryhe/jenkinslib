@@ -1,3 +1,9 @@
+
+
+
+
+
+
 #!groovy
 
 String mvnoptions = "${env.mvnoptions}"
@@ -36,5 +42,23 @@ pipeline{
           }
         }
 	  }
+	  
+	  stage("npm build"){
+        steps{
+          script{
+              npmlehome = tool "npm"
+              sh "${npmlehome}/bin/npm ${mvnoptions}"
+          }
+        }
+	  }	  
 	}
 }
+
+
+
+
+
+
+
+
+
