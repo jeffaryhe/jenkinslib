@@ -9,8 +9,12 @@ pipeline{
       stage("maven build"){
         steps{
           script{
-              mvnhome = tool "mvn"
-              sh "${mvnhome}/bin/mvn ${mvnoptions}"
+	     try {
+		  mvnhome = tool "mvn"
+		  sh "${mvnhome}/bin/mvn ${mvnoptions}"
+	     } catch(e){
+		     println(e)
+	       }
           }
         }
       }
