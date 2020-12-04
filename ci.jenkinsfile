@@ -6,7 +6,7 @@ pipeline{
     agent { node { label "build"} }
     
     stages{
-      stage("build"){
+      stage("maven build"){
         steps{
           script{
               mvnhome = tool "mvn"
@@ -14,5 +14,16 @@ pipeline{
           }
         }
       }
+    }
+    
+    stages{
+        stage("ant build"){
+            steps{
+                script{
+                    anthome = tool "ant"
+                    sh "${anthome} -v"
+                }
+            }
+        }
     }
 }
