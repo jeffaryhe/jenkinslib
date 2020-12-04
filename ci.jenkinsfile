@@ -27,5 +27,14 @@ pipeline{
           }
         }
 	  }
+	  
+	  stage("gradle build"){
+        steps{
+          script{
+              gradlehome = tool "gradle"
+              sh "${gradlehome}/bin/gradle ${mvnoptions}"
+          }
+        }
+	  }
 	}
 }
