@@ -32,7 +32,7 @@ pipeline{
         steps{
           script{
               gradlehome = tool "gradle"
-              sh "/usr/local/gradle/bin/gradle -v"
+              sh "${gradlehome}/bin/gradle ${mvnoptions}"
           }
         }
 	  }
