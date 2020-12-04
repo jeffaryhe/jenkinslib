@@ -28,7 +28,7 @@ pipeline{
         }
 	  }
 	  
-	  stage("gradle build"){
+      stage("gradle build"){
         steps{
           script{
               gradlehome = tool "gradle"
