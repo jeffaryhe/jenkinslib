@@ -14,16 +14,13 @@ pipeline{
           }
         }
       }
-    }
     
-    stages{
-        stage("ant build"){
-            steps{
-                script{
-                    anthome = tool "ant"
-                    sh "${anthome} -v"
+      stage("ant build"){
+        steps{
+          script{
+              anthome = tool "ant"
+              sh "${anthome} -v"
                 }
             }
         }
-    }
 }
