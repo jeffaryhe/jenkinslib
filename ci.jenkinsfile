@@ -10,7 +10,7 @@ pipeline{
         steps{
           script{
               mvnhome = tool "mvn"
-              sh "${mvnhome} ${mvnoptions}"
+              sh "${mvnhome}/bin/mvn ${mvnoptions}"
           }
         }
       }
@@ -19,7 +19,7 @@ pipeline{
         steps{
           script{
               anthome = tool "ant"
-              sh "${anthome} -v"
+              sh "${anthome}/bin/ant ${mvnoptions}"
           }
         }
 	  }
