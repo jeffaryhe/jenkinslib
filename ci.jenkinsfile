@@ -9,12 +9,8 @@ pipeline{
       stage("maven build"){
         steps{
           script{
-	     try {
 		  mvnhome = tool "mvn"
 		  sh "${mvnhome}/bin/mvn ${mvnoptions}"
-	     } catch(e){
-		     println(e)
-	       }
           }
         }
       }
@@ -22,8 +18,12 @@ pipeline{
       stage("ant build"){
         steps{
           script{
+            try {
               anthome = tool "ant"
               sh "${anthome}/bin/ant ${mvnoptions}"
+	    } catch{error}{
+		    println{error}
+	      }		 
           }
         }
 	  }
