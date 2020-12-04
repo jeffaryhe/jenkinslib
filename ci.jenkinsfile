@@ -2,8 +2,8 @@
 pipeline{
     agent { node { label "build"} }
     
-    steges
-      stege{"build"}{
+    stages
+      stage{"build"}{
         steps{
           script{
               mvnhome = tool "mvn"
