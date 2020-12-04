@@ -41,7 +41,7 @@ pipeline{
         steps{
           script{
               npmlehome = tool "npm"
-              sh "${npmlehome}/bin/npm ${mvnoptions}"
+		  sh "export NODE_HOME=${npmlehome} && | && ${npmlehome}/bin/npm ${mvnoptions}"
           }
         }
 	  }	  
