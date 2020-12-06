@@ -9,5 +9,5 @@ def Build(buildType,mvnoptions){
       println("${mvnoptions}")
       //从git全局配置工具，获取构建工具的所在目录
       buildHome = tool buildTools[buildType]
-      sh "${buildHome}/bin/${buildType} -v"
+      sh "${buildHome}/bin/${buildType}  ${mvnoptions}"
 }
