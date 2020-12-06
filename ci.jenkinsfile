@@ -4,8 +4,11 @@
 
 def build = new org.devops.build()
 
+
+
 //从jenkins获取构建传参
-String buildShell = "${env.buildShell}"
+String buildType = "${env.buildType}"
+
 
 //从jenkins获取构建传参
 String mvnoptions = "${env.mvnoptions}"
@@ -18,7 +21,7 @@ pipeline{
         steps{
           script{
 		 //调用build共享库下面的方法。
-		 build.Build(buildType,buildShell)
+		 build.Build(buildType,mvnoptions)
           }
         }
       }
