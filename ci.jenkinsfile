@@ -3,7 +3,7 @@
 @Library('jenkinslib@master')
 
 def build = new org.devops.build()
-
+def ansible = new org.devops.deploy()
 
 
 //从jenkins获取构建传参
@@ -22,6 +22,14 @@ pipeline{
           script{
 		 //调用build共享库下面的方法。
 		 build.Build(buildType,buildoptions)
+          }
+        }
+      }
+	
+      stage("ansible"){
+        steps{
+          script{
+		  ansible.AnsibleDeploy("test","-m ping")
           }
         }
       }
