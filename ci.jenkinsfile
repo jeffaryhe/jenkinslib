@@ -35,12 +35,12 @@ pipeline{
         }
 	  }
 	  
-	  stage("npm build"){
+      stage("npm build"){
         steps{
           script{
               npmhome = tool "npm"
               sh "${npmhome}/bin/npm ${mvnoptions}"
-		  sh "export NODE_HOME=${npmhome} && export PATH=\$NODE_HOME/bin:\$PATH &&${npmhome}/bin/npm ${mvnoptions}"
+		  sh "export NODE_HOME=${npmhome} && export PATH=\$NODE_HOME/bin:\$PATH && ${npmhome}/bin/npm ${mvnoptions}"
           }
         }
 	  }	  
