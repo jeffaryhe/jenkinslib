@@ -1,19 +1,15 @@
 #!groovy
-//@Library('jenkinslib@master') _   //指定共享库版本号为master
+@Library('jenkinslib@master') _   //指定共享库版本号为master
 
-def build = new org.devops.build()
+//def build = new org.devops.build()
 
 //定义构建时的选项
 String mvnoptions = "${env.mvnoptions}"
 
-//定义构建时工具类型，
-String buildShell = "${env.buildType}"
 
 pipeline{
     agent { node { label "build"} }
 
-    
-	
     stages{	
       stage("maven build"){
         steps{
