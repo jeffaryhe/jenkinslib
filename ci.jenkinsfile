@@ -32,7 +32,7 @@ pipeline{
       stage("ansible"){
         steps{
           script{
-		  ansible.AnsibleDeploy("${deployHosts}","-m shell -a "date"")
+		  ansible.AnsibleDeploy("${deployHosts}","-m shell -a date")
           }
         }
       }
