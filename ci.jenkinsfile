@@ -13,6 +13,9 @@ String buildType = "${env.buildType}"
 //从jenkins获取构建传参
 String buildoptions = "${env.buildoptions}"
 
+//从jenkins传参到ansible
+String deployHosts = "${env.deployHosts}"
+
 pipeline{
     agent { node { label "build"} }
     
@@ -29,7 +32,7 @@ pipeline{
       stage("ansible"){
         steps{
           script{
-		  ansible.AnsibleDeploy("test","-m ping")
+		  ansible.AnsibleDeploy("${deployHosts}","-m shell -a "data"")
           }
         }
       }
