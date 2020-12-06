@@ -17,7 +17,7 @@ pipeline{
     agent { node { label "build"} }
     
     stages{
-      stage("build options"){
+      stage("building"){
         steps{
           script{
 		 //调用build共享库下面的方法。
