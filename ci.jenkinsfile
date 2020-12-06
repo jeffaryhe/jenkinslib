@@ -1,5 +1,5 @@
 #!groovy
-@Libary('jenkinslibrary@master') _   //指定版本号为master
+@Libary('jenkinslibrary'@master) _   //指定版本号为master
 
 def build = new org.devops.build()
 
