@@ -14,8 +14,10 @@ pipeline{
     
     stages{
 	    stage("build"){
-	      script{
+	      steps{
+	        script{
                   build.build(buildType,buildShell)
+	        }
 	      }
 	    }	    
     }
