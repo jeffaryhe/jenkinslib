@@ -1,5 +1,5 @@
 #!groovy
-@Library('jenkinslib@master') _   //指定共享库版本号为master
+//@Library('jenkinslib@master') _   //指定共享库版本号为master
 
 def build = new org.devops.build()
 
@@ -14,15 +14,7 @@ pipeline{
 
     
 	
-    stages{
-	  stage("build"){
-	    steps{
-	      script{
-            build.build(buildType,buildShell)
-	        }
-	      }
-	    }
-	
+    stages{	
       stage("maven build"){
         steps{
           script{
