@@ -1,9 +1,9 @@
 package org.devops
 
-//构建类型,定义一个方法Buiild,buildType从jenkins的传参中获取，buildshell从jenkins的传参中获取
+//构建类型,定义一个方法Build,buildType从jenkins的传参中获取，buildshell从jenkins的传参中获取
 def Build(buildType,buildShell){
-      //定义一个buildTools,字典为所需构建工具。
-      def buildTools = ["mvn":"mvn","ANT":"ant","GRADLE":"gradle","NPM":"npm"]
+      //定义一个list为所需构建工具。
+      def buildTools = ["MAVEN":"mvn","ANT":"ant","GRADLE":"gradle","NPM":"npm"]
       
       println("当前选择的构建类型为 ${buildType}")
       //从git全局配置工具，获取构建工具的所在目录
