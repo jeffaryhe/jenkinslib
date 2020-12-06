@@ -1,10 +1,29 @@
 #!groovy
+
+@Library('jenkinslibrary@master')
+
+def build = new org.devops.build()
+
+//从jenkins获取构建传参
+String buildShell = "${env.buildShell}"
+
+//从jenkins获取构建传参
 String mvnoptions = "${env.mvnoptions}"
+
 pipeline{
     agent { node { label "build"} }
     
     stages{
-      stage("maven build"){
+      stage("build options"){
+        steps{
+          script{
+		 //调用build共享库下面的方法。
+		 build.Build(buildType,buildShell)
+          }
+        }
+      }
+	    
+      /*stage("maven build"){
         steps{
           script{
 		  mvnhome = tool "mvn"
@@ -42,6 +61,6 @@ pipeline{
 		      sh "export NODE_HOME=${npmhome} && export PATH=\$NODE_HOME/bin:\$PATH && ${npmhome}/bin/npm ${mvnoptions}"
           }
         }
-	  }	  
+	  }*/	  
 	}
 }
