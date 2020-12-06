@@ -13,7 +13,7 @@ def Build(buildType,buildoptions){
       if ("${buildType}" == "npm"){
           sh """ export NODE_HOME=${buildHome} 
                  export PATH=\$NODE_HOME/bin:\$PATH 
-                 ${buildHome}/bin/npm ${mvnoptions}"""            
+                 ${buildHome}/bin/${buildType}  ${buildoptions}"""            
       } else {
 			sh "${buildHome}/bin/${buildType}  ${buildoptions}"
 	  }	  
