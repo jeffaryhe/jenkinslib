@@ -14,7 +14,13 @@ def Build(buildType,buildoptions){
           sh """ export NODE_HOME=${buildHome} 
                  export PATH=\$NODE_HOME/bin:\$PATH 
                  ${buildHome}/bin/${buildType}  ${buildoptions}"""            
+      } else if ("${buildType}" == "ant"){
+	  try {	             
+                  sh "${buildHome}/bin/${buildType}  ${buildoptions}"  
+	          } catch(error){
+		          println{error}   
+	            }
       } else {
-			sh "${buildHome}/bin/${buildType}  ${buildoptions}"
-	  }	  
+	  sh "${buildHome}/bin/${buildType}  ${buildoptions}"
+      }	  
 }
