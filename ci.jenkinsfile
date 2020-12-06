@@ -1,5 +1,6 @@
+  
 #!groovy
-@Library('jenkinslib@master') _   //指定版本号为master
+@Library('jenkinslib@master') _   //指定共享库版本号为master
 
 def build = new org.devops.build()
 
@@ -33,7 +34,7 @@ pipeline{
         }
       }
     
-      stage("ant build"){
+      /*stage("ant build"){
         steps{
           script{
 		      try {
@@ -62,6 +63,6 @@ pipeline{
 		  sh "export NODE_HOME=${npmhome} && export PATH=\$NODE_HOME/bin:\$PATH &&${npmhome}/bin/npm ${mvnoptions}"
           }
         }
-	  }	  
+	  }*\	  
 	}
 }
