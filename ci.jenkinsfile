@@ -11,7 +11,7 @@ String buildType = "${env.buildType}"
 
 
 //从jenkins获取构建传参
-String jenkinsoptions = "${env.options}"
+String buildoptions = "${env.buildoptions}"
 
 pipeline{
     agent { node { label "build"} }
@@ -21,7 +21,7 @@ pipeline{
         steps{
           script{
 		 //调用build共享库下面的方法。
-		 build.Build(buildType,jenkinsoptions)
+		 build.Build(buildType,buildoptions)
           }
         }
       }
